@@ -29,6 +29,22 @@ import static org.fest.assertions.Assertions.assertThat;
 public class ConversionTest {
 
     @Test
+    public void justPlayingWithAssertJ() {
+        Source source = new Source();
+        source.setFoo(42);
+        source.setBar(23L);
+        source.setZip(73);
+
+        Target target = SourceTargetMapper.INSTANCE.sourceToTarget(source);
+
+        assertThat(target).isNotNull();
+        assertThat(target.getFoo()).isEqualTo(42L);
+        assertThat(target.getBar()).isEqualTo(23);
+        assertThat(target.getZip()).isEqualTo("73");
+
+    }
+
+    @Test
     public void shouldApplyConversions() {
         Source source = new Source();
         source.setFoo(42);

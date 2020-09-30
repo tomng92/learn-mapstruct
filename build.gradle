@@ -39,7 +39,10 @@ dependencies {
 	testImplementation "org.testng:testng:6.10", "org.easytesting:fest-assert:1.4"
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 //		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+
+//		testImplementation('org.assertj:assertj-core:3.17.2')
 	}
+
 }
 
 tasks.withType(JavaCompile) {
